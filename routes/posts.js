@@ -173,7 +173,7 @@ router.patch('/:postId/comment/:commentId', async (req, res)=>{
                 "comments.$.text": req.body.text
             }})
 
-        res.status(200).json(update)
+        res.status(200).json(updatecl)
 
     }catch(err){
         res.status(500).json({message: err})
