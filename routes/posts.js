@@ -42,7 +42,7 @@ router.post('/', async (req, res)=>{
         title: req.body.title,
         description: req.body.description,
         username: req.body.username,
-        imageUrl: req.body.imageUrl
+        imgUrl: req.body.imgUrl
     })
 
     try{
