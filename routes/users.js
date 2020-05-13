@@ -1,10 +1,10 @@
 const express= require('express')
-const route = express.Router();
+const router = express.Router();
 const User = require('../models/user');
 
 
 // GET ALL USERS========================================
-route.get('/', async (req, res)=>{
+router.get('/', async (req, res)=>{
 
     try{
         const users = await User.find()
@@ -18,7 +18,7 @@ route.get('/', async (req, res)=>{
 })
 
 // GET USER PROFILE=======================================
-route.get('/:username', async (req, res)=>{
+router.get('/:username', async (req, res)=>{
 
     try{
 
@@ -36,7 +36,7 @@ route.get('/:username', async (req, res)=>{
 
 
 //CREATE NEW USER=========================================
-route.post('/', async (req, res) => {
+router.post('/', async (req, res) => {
 
     const user = new User({ 
         username: req.body.username,
@@ -63,7 +63,7 @@ route.post('/', async (req, res) => {
 
 // DELETE USER ==========================================
 
-route.delete('/:username', async (req, res)=>{
+router.delete('/:username', async (req, res)=>{
 
     try{
         const deletion= await User.remove({"username": req.params.username})
@@ -77,7 +77,7 @@ route.delete('/:username', async (req, res)=>{
 
 // UPLOAD USER ==========================================
 
-route.patch('/:username', async (req, res)=>{
+router.patch('/:username', async (req, res)=>{
 
     try{
 
@@ -102,7 +102,7 @@ route.patch('/:username', async (req, res)=>{
 
 
 // ADD USER FOLLOW=======================================
-route.post('/:username/follow', async (req, res)=>{
+router.post('/:username/follow', async (req, res)=>{
 
     try{
         
@@ -124,7 +124,7 @@ route.post('/:username/follow', async (req, res)=>{
 
 // DELETE USER FOLLOW  =================================
 
-route.delete('/:username/follow', async (req, res)=>{
+router.delete('/:username/follow', async (req, res)=>{
 
     try{
 
@@ -144,4 +144,4 @@ route.delete('/:username/follow', async (req, res)=>{
 })
 
 
-module.exports = route;
+module.exports = router;

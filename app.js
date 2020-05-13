@@ -9,10 +9,11 @@ app.use(bodyParser.json())
 
 //import Routes
 const postRoute = require('./routes/posts')
-app.use('/posts', postRoute)
+app.use('/post', postRoute)
 const userRoute = require('./routes/users')
 app.use('/user', userRoute)
-
+const groupRoute = require('./routes/groups')
+app.use('/group', groupRoute)
 
 
 //index
