@@ -10,6 +10,7 @@ const UserSchema = mongoose.Schema({
     cognitoCode: { type:String, require: false},
     profilePictureUrl: { type:String},
     follows: [],
+    followers: [],
     groups: { type:Array},
     readBooks: {type: Array},
     wishlist: {type:Array},
