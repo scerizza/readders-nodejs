@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 const PostSchema = mongoose.Schema({
     title: { type:String, required:true},
+    page: {type:String, required:false},
     description: { type:String, required:true},
     username: {type:String},
     date: {type: Date, default: Date.now},

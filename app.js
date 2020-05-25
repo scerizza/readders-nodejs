@@ -1,9 +1,10 @@
 const express = require('express')
-const app= express();
 const mongoose = require('mongoose')
 const bodyParser= require('body-parser')
-
 require('dotenv/config')
+
+
+const app= express();
 
 app.use(bodyParser.json())
 
@@ -30,4 +31,4 @@ mongoose.connect(
     ()=> console.log('connected to db'))
 
 
-app.listen('3000');
+app.listen('4000');
